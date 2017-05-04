@@ -34,10 +34,14 @@ class TestCase extends \PHPUnit\Framework\TestCase {
 
 	public function getOmie() {
 		if(self::$omie === null) {
-			$dotenv = new Dotenv(__DIR__ . "/../", '.env_tests');
-			$dotenv->load();
+
+			if(file_exists(__DIR__ . "/../.env.tests")) {
+				$dotenv = new Dotenv(__DIR__ . "/../", '.env_tests');
+				$dotenv->load();
+			}
 
 			self::$omie = new Omie(getenv('OMIE_API_KEY'), getenv('OMIE_API_SECRET'));
+
 		}
 
 		return self::$omie;
