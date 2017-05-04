@@ -25,7 +25,7 @@
         "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
-	    "php": ">=5.4",
+	    "php": ">=5.6",
 	    "phpunit/phpunit": "^6.1",
         "mockery/mockery": "^0.9.9",
         "fzaninotto/faker": "^1.6"
