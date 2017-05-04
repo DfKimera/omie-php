@@ -1,6 +1,7 @@
 # omie-php
 Cliente PHP para o ERP [Omie (Omiexperience)](http://www.omie.com.br)
 
+![Travis](https://travis-ci.org/DfKimera/omie-php.svg?branch=master)
 ---
 
 ## Módulos disponíveis
