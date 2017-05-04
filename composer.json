@@ -1,0 +1,32 @@
+{
+    "name": "dfkimera/omie-php",
+    "description": "Omiexperience (omie.com.br) ERP PHP client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aryel Tupinamba",
+            "email": "aryel.tupinamba@lqdi.net"
+        }
+    ],
+	"autoload": {
+		"psr-4": {
+			"DfKimera\\OmiePhp\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests/"
+		}
+	},
+    "minimum-stability": "stable",
+    "require": {
+        "nategood/httpful": "^0.2.20",
+        "illuminate/support": "^5.4",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1",
+        "mockery/mockery": "^0.9.9",
+        "fzaninotto/faker": "^1.6"
+    }
+}
