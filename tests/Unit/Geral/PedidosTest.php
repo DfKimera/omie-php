@@ -166,6 +166,13 @@ class PedidosTest extends TestCase {
 			]),
 		]);
 
+		$pedidoArray = $pedido->toArray();
+
+		$this->assertInternalType('array', $pedidoArray['det']);
+		$this->assertInternalType('array', $pedidoArray['lista_parcelas']);
+		$this->assertCount(3, $pedidoArray['det']);
+		$this->assertCount(1, $pedidoArray['lista_parcelas']);
+
 		$resIncluir = $pedidos->incluir($pedido);
 
 		$this->assertInstanceOf(PedidoResponse::class, $resIncluir);

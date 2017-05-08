@@ -35,12 +35,12 @@ class Pedidos extends RestClient {
 	}
 
 	/**
-	 * @param Pedido $cliente
+	 * @param Pedido $pedido
 	 * @return PedidoResponse
 	 */
-	public function incluir(Pedido $cliente) : PedidoResponse {
+	public function incluir(Pedido $pedido) : PedidoResponse {
 
-		$result = $this->call('IncluirPedido', $cliente->toArray());
+		$result = $this->call('IncluirPedido', $pedido->toArray());
 		return new PedidoResponse($result);
 
 	}

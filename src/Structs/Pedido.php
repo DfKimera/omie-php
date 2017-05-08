@@ -109,8 +109,10 @@ class Pedido extends Struct {
 
 	public function toArray(): array {
 		$data = (array) $this;
-		$data['det'] = $data['itens'];
-		$data['lista_parcelas'] = ['parcela' => $data['lista_parcelas']];
+		$data['det'] = is_object($data['itens']) ? ($data['itens']->toArray()) : ((array) $data['itens']);
+		$data['lista_parcelas'] = [
+			'parcela' => is_object($data['lista_parcelas']) ? ($data['lista_parcelas']->toArray()) : ((array) $data['lista_parcelas'])
+		];
 
 		unset($data['itens']);
 
