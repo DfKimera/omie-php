@@ -37,4 +37,9 @@ class OmieRequestException extends \Exception {
 		return $this->error;
 	}
 
+	public function __toString() {
+		if(!$this->error) return '[OmieERP Unknown Error!]';
+		return "[OmieERP Error {$this->error->faultcode}] " . ($this->error->faultstring ?? 'missing-faultstring');
+	}
+
 }
