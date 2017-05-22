@@ -18,6 +18,8 @@ class Struct {
 
 	public function __construct($data = []) {
 
+		if(!is_array($data)) return;
+
 		foreach($data as $key => $value) {
 
 			$setter = 'set' . ucwords($key);
