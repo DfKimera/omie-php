@@ -18,7 +18,9 @@ class Struct {
 
 	public function __construct($data = []) {
 
-		if(!is_array($data)) return;
+		if(!is_array($data) && !is_object($data)) return;
+
+		$data = (array) $data;
 
 		foreach($data as $key => $value) {
 
