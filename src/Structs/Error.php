@@ -41,4 +41,13 @@ class Error extends Struct {
 	 */
 	public $fatal;
 
+	public function setFaultcode($code) {
+		$this->code = $code;
+	}
+
+	public function setFaultstring($description) {
+		$this->description = $description;
+	}
+
+
 }
