@@ -44,12 +44,12 @@ abstract class RestClient {
 
 		if($response->hasErrors() || $body === null) {
 			error_log("[OmieERP Bridge] Request unknown error, body: " . (is_object($body) ? json_encode($body) : strval($body)), 0);
-			throw new OmieRequestException(new Error($body), (is_object($body)) ? $body->faultstring : strval($body));
+			throw new OmieRequestException(new Error($body), (is_object($body)) ? $body->faultstring : strval($body), $body);
 		}
 
 		if(isset($body->code) && isset($body->description)) {
 			error_log("[OmieERP Bridge] Request exception ({$body->code}), body: " . (is_object($body) ? json_encode($body) : strval($body)), 0);
-			throw new OmieRequestException(new Error($body));
+			throw new OmieRequestException(new Error($body), null, $body);
 		}
 
 		return $body;

@@ -18,8 +18,11 @@ use DfKimera\OmiePhp\Structs\Error;
 class OmieRequestException extends \Exception {
 
 	protected $error = null;
+	public $rawBody = null;
 
-	public function __construct(Error $error = null, $message = null) {
+	public function __construct(Error $error = null, $message = null, $rawBody = null) {
+
+		$this->rawBody = $rawBody;
 
 		if(!$error && !$message) {
 			parent::__construct("Unknown Omie API error!", 0);
