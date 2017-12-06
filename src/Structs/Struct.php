@@ -16,11 +16,7 @@ namespace DfKimera\OmiePhp\Structs;
 
 class Struct {
 
-	public $_rawData;
-
 	public function __construct($data = []) {
-
-		$this->_rawData = $data;
 
 		if(!is_array($data) && !is_object($data)) return;
 
